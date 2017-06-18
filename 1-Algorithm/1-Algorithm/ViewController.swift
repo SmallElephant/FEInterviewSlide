@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         setUp()
         setUpSearch()
         setUpString()
+        setUpListNode()
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +58,30 @@ class ViewController: UIViewController {
         let str = "I am FlyElephant"
         let result = mystring.reverseString(str: str)
         print("反转之后的字符串:\(result)")
+    }
+    
+    private func setUpListNode() {
+        
+        let mylistNode = MyListNode()
+        
+        let headNode = ListNode()
+        headNode.value = 10
+        
+        let node1 = ListNode()
+        node1.value = 20
+        
+        let node2 = ListNode()
+        node2.value = 30
+        
+        headNode.next = node1
+        node1.next = node2
+        
+        var reverseHead = mylistNode.reverseNode(node: headNode)
+        
+        while reverseHead != nil {
+            print("节点的值:\(reverseHead!.value!)")
+            reverseHead = reverseHead?.next
+        }
     }
 
 }
