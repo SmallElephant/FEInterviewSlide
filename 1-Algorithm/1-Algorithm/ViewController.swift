@@ -43,6 +43,14 @@ class ViewController: UIViewController {
         arr = [1, 3, 100, 20, 40, 60, 10, 9]
         sort.mergeSort(arr: &arr, low: 0, high: arr.count - 1)
         print("归并排序的结果:\(arr)")
+        
+        arr = [1, 3, 10, 2, 4, 8, 10, 9]
+        sort.insert(arr: &arr)
+        print("插入排序的结果:\(arr)")
+        
+        arr = [1, 3, 10, 2, 4, 8, 100, 9, 25]
+        sort.shell(arr: &arr)
+        print("希尔排序的结果:\(arr)")
     }
     
     private func setUpSearch() {

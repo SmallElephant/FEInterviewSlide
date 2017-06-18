@@ -131,5 +131,42 @@ class Sort {
     }
     
     
+    // 5.插入排序 平均时间复杂度O(n²) 最好时间复杂度O(n) 最差时间复杂度O(n²) 稳定排序算法
     
+    func insert(arr:inout [Int]) {
+        
+        let count = arr.count
+        
+        for i in 1..<count {
+            for j in (1...i).reversed() {
+                if arr[j] < arr[j - 1] {
+                    swap(&arr[j], &arr[j - 1])
+                }
+            }
+        }
+    }
+    
+    // 6.插入排序 平均时间复杂度O(nlogn~n²) 最好时间复杂度O(n1.3) 最差时间复杂度O(n²) 不稳定排序算法
+    
+    func shell(arr:inout [Int]) {
+        
+        let count:Int = arr.count
+        var gap:Int = 1
+        let base:Int = 3
+        while (gap < count / base) {
+            gap = base * gap + 1;
+        }
+        
+        while gap > 0 {
+            for i in gap..<count {
+                for j in (gap...i).reversed()  {
+                    if  arr[j] < arr[j - gap]{
+                        swap(&arr[j], &arr[j - gap])
+                    }
+                    
+                }
+            }
+            gap = gap / base
+        }
+    }
 }
