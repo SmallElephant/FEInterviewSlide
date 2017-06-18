@@ -28,6 +28,11 @@ class ViewController: UIViewController {
         var arr = [10, 8, 1, 2, 7, 5, 6, 18, 24]
         sort.bubbleSort(arr: &arr)
         print("冒泡排序的结果:\(arr)")
+        
+        arr = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
+        sort.select(arr: &arr)
+        print("选择排序的结果:\(arr)")
+        
     }
 
 }

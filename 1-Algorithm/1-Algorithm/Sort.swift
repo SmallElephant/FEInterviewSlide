@@ -10,7 +10,7 @@ import Foundation
 
 class Sort {
     
-    // 冒泡排序
+    // 1.冒泡排序 平均时间复杂度O(n²) 最好时间复杂度O(n) 最差时间复杂度O(n²) 稳定排序算法
     
     func bubbleSort(arr:inout [Int]) {
         
@@ -19,6 +19,21 @@ class Sort {
             for j in 0..<(count - i - 1) {
                 if arr[j]  > arr[j + 1] {
                     swap(&arr[j], &arr[j + 1])
+                }
+            }
+        }
+        
+    }
+    
+    // 2.选择排序 平均时间复杂度O(n²) 最好时间复杂度O(n²) 最差时间复杂度O(n²) 不稳定排序算法
+    
+    func select(arr:inout [Int]) {
+        
+        let count = arr.count
+        for i in 0..<(count - 1) {
+            for j in (i + 1)..<count {
+                if arr[i] > arr[j] {
+                    swap(&arr[i], &arr[j])
                 }
             }
         }
