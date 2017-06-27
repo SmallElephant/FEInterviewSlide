@@ -19,15 +19,17 @@ class MyListNode {
     
     func reverseNode(node:ListNode) -> ListNode? {
         
-        var reveseHead:ListNode?
         var headNode:ListNode? = node
+        var reverseNode:ListNode?
         var preNode:ListNode?
         
         while headNode != nil {
-            let next = headNode?.next
+            let next:ListNode? = headNode?.next
+            
             if next == nil {
-                reveseHead = headNode
-                reveseHead?.next = preNode
+                headNode?.next = preNode
+                
+                reverseNode = headNode
             } else {
                 headNode?.next = preNode
                 preNode = headNode
@@ -36,7 +38,7 @@ class MyListNode {
             headNode = next
         }
         
-        return reveseHead!
+        return reverseNode
     }
     
 }
